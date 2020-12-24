@@ -13,8 +13,10 @@ import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
 import org.springframework.http.HttpMethod;
 
+import com.ecom.entity.Country;
 import com.ecom.entity.Product;
 import com.ecom.entity.ProductCategory;
+import com.ecom.entity.State;
 
 
 @Configuration
@@ -27,29 +29,27 @@ public class DateRestConfig implements RepositoryRestConfigurer{
 		entityManager = theEntityManager;
 	}
 	
-	
 	@Override
 	public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config) {
 		
 		HttpMethod[] unsupportedMethods = {HttpMethod.PUT,HttpMethod.POST,HttpMethod.DELETE};
 		
-		//disable methods for Product: PUT, POST, DELETE
-		config.getExposureConfiguration()
-				.forDomainType(Product.class)
-				.withItemExposure((metadata,httpMethods) -> httpMethods.disable(unsupportedMethods))
-				.withCollectionExposure((metadata,httpMethods) -> httpMethods.disable(unsupportedMethods));
+		List<Class> daoRepo = List.of(Product.class, ProductCategory.class, Country.class, State.class);
 		
-		//disable methods for ProductCategory: PUT, POST, DELETE
-		config.getExposureConfiguration()
-				.forDomainType(ProductCategory.class)
-				.withItemExposure((metadata,httpMethods) -> httpMethods.disable(unsupportedMethods))
-				.withCollectionExposure((metadata,httpMethods) -> httpMethods.disable(unsupportedMethods));
+		//disable methods: PUT, POST, DELETE
+		daoRepo.forEach(repo -> disableHttpMethods(repo, config, unsupportedMethods));
 				
 		//call an internal helper method
 		exposeIds(config);
 		
 	}
 
+	private void disableHttpMethods(Class theClass, RepositoryRestConfiguration config, HttpMethod[] unsupportedMethods) {
+		config.getExposureConfiguration()
+				.forDomainType(theClass)
+				.withItemExposure((metadata,httpMethods) -> httpMethods.disable(unsupportedMethods))
+				.withCollectionExposure((metadata,httpMethods) -> httpMethods.disable(unsupportedMethods));
+	}
 
 	private void exposeIds(RepositoryRestConfiguration config) {
 		
