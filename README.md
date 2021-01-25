@@ -12,6 +12,10 @@ It is a Real-time eCommerce full-stack application.
 -   Track previous orders for logged in users
 
 ## Technology Used
+-   Angular
+-   Spring Boot
+-   MySQL/H2
+-   Okta Integration (OAuth2, OIDC, JWT)
 
 ## Database Schema Diagram
 
