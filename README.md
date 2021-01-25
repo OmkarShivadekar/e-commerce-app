@@ -19,6 +19,6 @@ It is a Real-time eCommerce full-stack application.
 
 ## Database Schema Diagram
 
-!["Database Schema Diagram"] (https://github.com/OmkarShivadekar/e-commerce-app/blob/master/document/Schema.png)
+!["Database Schema Diagram"](https://github.com/OmkarShivadekar/e-commerce-app/blob/master/document/Schema.png)
 
 ## Screenshots
