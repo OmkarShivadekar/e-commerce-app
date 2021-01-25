@@ -22,3 +22,15 @@ It is a Real-time eCommerce full-stack application.
 !["Database Schema Diagram"](https://github.com/OmkarShivadekar/e-commerce-app/blob/master/document/Schema.png)
 
 ## Screenshots
+
+### Login
+!["Login"](https://github.com/OmkarShivadekar/e-commerce-app/blob/master/document/Login.PNG)
+
+### Homepage
+!["Homepage"](https://github.com/OmkarShivadekar/e-commerce-app/blob/master/document/Homepage.PNG)
+
+### Cart Details
+!["Cart Details"](https://github.com/OmkarShivadekar/e-commerce-app/blob/master/document/CartDetails.PNG)
+
+### Checkout
+!["Checkout"](https://github.com/OmkarShivadekar/e-commerce-app/blob/master/document/Checkout.PNG)
