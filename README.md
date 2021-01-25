@@ -14,6 +14,7 @@ It is a Real-time eCommerce full-stack application.
 ## Technology Used
 -   Angular
 -   Spring Boot
+-   Spring Data JPA
 -   MySQL/H2
 -   Okta Integration (OAuth2, OIDC, JWT)
 
